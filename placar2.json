@@ -1,0 +1,392 @@
+{
+  "data": {
+    "b2cor": {
+      "updateLabel": "15h",
+      "goalSales": 6,
+      "goalContacts": 30,
+      "goalSims": 8,
+      "goalSalesInd": 2,
+      "alertLeads": 0,
+      "alertBelow": 0,
+      "vendedores": [
+        {
+          "name": "Jean",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Francisco",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Andreo",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Bruno",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Gabriel",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        }
+      ],
+      "reunioes": [],
+      "sdrs": [
+        {
+          "name": "João",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        },
+        {
+          "name": "Daniel",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        },
+        {
+          "name": "Ezequiel",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        },
+        {
+          "name": "Eric",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        }
+      ]
+    },
+    "3cplus": {
+      "updateLabel": "15h",
+      "goalSales": 6,
+      "goalContacts": 30,
+      "goalSims": 8,
+      "goalSalesInd": 2,
+      "alertLeads": 0,
+      "alertBelow": 0,
+      "vendedores": [
+        {
+          "name": "Jean",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Francisco",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Andreo",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Bruno",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Gabriel",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        }
+      ],
+      "reunioes": [],
+      "listasConfig": [
+        {
+          "nome": "Contabilidade",
+          "totalEmpresas": 0,
+          "totalLigacoes": 0
+        },
+        {
+          "nome": "Educação",
+          "totalEmpresas": 0,
+          "totalLigacoes": 0
+        },
+        {
+          "nome": "Tecnologia",
+          "totalEmpresas": 0,
+          "totalLigacoes": 0
+        }
+      ],
+      "listas": {
+        "Contabilidade": [
+          {
+            "name": "João",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Daniel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Ezequiel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Eric",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          }
+        ],
+        "Educação": [
+          {
+            "name": "João",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Daniel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Ezequiel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Eric",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          }
+        ],
+        "Tecnologia": [
+          {
+            "name": "João",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Daniel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Ezequiel",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          },
+          {
+            "name": "Eric",
+            "efetivas": 0,
+            "emails": 0,
+            "negociacao": 0,
+            "qualificados": 0,
+            "propostas": 0,
+            "semInteresse": 0
+          }
+        ]
+      },
+      "reunioes_lista": {}
+    },
+    "pme": {
+      "updateLabel": "15h",
+      "goalSales": 6,
+      "goalContacts": 30,
+      "goalSims": 8,
+      "goalSalesInd": 2,
+      "alertLeads": 0,
+      "alertBelow": 0,
+      "vendedores": [
+        {
+          "name": "Jean",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Francisco",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Andreo",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Bruno",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        },
+        {
+          "name": "Gabriel",
+          "leads": 0,
+          "contacts": 0,
+          "sims": 0,
+          "sales": 0,
+          "resp": 0,
+          "active": 1
+        }
+      ],
+      "reunioes": [],
+      "sdrs": [
+        {
+          "name": "João",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        },
+        {
+          "name": "Daniel",
+          "leads": 0,
+          "qualificados": 0,
+          "negociacao": 0,
+          "ligacoes": 0,
+          "efetivas": 0,
+          "emails": 0,
+          "qualifs": 0,
+          "reunioes": 0,
+          "semInteresse": 0,
+          "active": 1
+        }
+      ]
+    },
+    "savedAt": "2026-03-19T18:08:01.901Z"
+  }
+}

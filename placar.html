@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Prime — Placar Comercial</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="placar.css">
+</head>
+<body>
+
+<a class="btn-back" href="/">← Voltar</a>
+
+<!-- ════════════════════════════
+     DASHBOARD VIEW
+════════════════════════════ -->
+<div id="dashboard-view" class="view">
+
+  <div class="hdr">
+    <div class="hdr-logo">
+      <img src="data:image/png;base64,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" alt="Top Prime">
+    </div>
+    <div class="hdr-info">
+      <div class="hdr-title">Top Prime Seguros &amp; Saúde &mdash; <span id="hdr-funil">B2COR</span></div>
+      <div class="hdr-sub">Placar Comercial Diário</div>
+    </div>
+    <div style="margin:0 8px">
+      <div class="upd-badge" id="dash-badge">🕒 15h</div>
+    </div>
+    <div class="hdr-clock">
+      <div class="clock" id="clock">00:00:00</div>
+      <div class="date-lbl" id="date-lbl"></div>
+    </div>
+  </div>
+
+  <div class="funil-bar">
+    <span class="funil-label">Funil:</span>
+    <button class="funil-btn active" data-funil="b2cor"   onclick="setFunil('b2cor')">B2COR</button>
+    <button class="funil-btn"        data-funil="3cplus"  onclick="setFunil('3cplus')">3CPlus</button>
+    <button class="funil-btn"        data-funil="pme"     onclick="setFunil('pme')">Formulário PME</button>
+  </div>
+
+  <div class="lista-bar" id="lista-bar" style="display:none">
+    <span class="lista-label">Lista:</span>
+    <button class="lista-btn active" data-lista="Contabilidade" onclick="setLista('Contabilidade')">Contabilidade</button>
+    <button class="lista-btn"        data-lista="Educação"      onclick="setLista('Educação')">Educação</button>
+    <button class="lista-btn"        data-lista="Tecnologia"    onclick="setLista('Tecnologia')">Tecnologia</button>
+  </div>
+
+  <div class="dashboard-body">
+
+    <!-- Coluna Vendedores -->
+    <div class="col-vendedores">
+      <div class="col-title">Vendedores</div>
+
+      <div class="card">
+        <div class="card-header">Ranking — Vendedores</div>
+        <div class="rank-head rank-vend">
+          <div>#</div><div>Consultor</div>
+          <div style="text-align:center">Leads</div>
+          <div style="text-align:center">Contatos</div>
+          <div style="text-align:center">Propostas</div>
+          <div style="text-align:center">Vendas</div>
+          <div style="text-align:center">Conv.%</div>
+        </div>
+        <div id="rank-vend-rows"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Indicadores — Vendedores</div>
+        <div class="ind-grid" id="vend-ind"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">🎯 Meta do Time — Vendas</div>
+        <div class="goal-wrap">
+          <div class="goal-head">
+            <span>Progresso</span>
+            <b id="vend-goal-text"></b>
+          </div>
+          <div class="pbar"><div class="pbar-fill" id="vend-pbar" style="width:0%"></div></div>
+          <div class="goal-pct" id="vend-goal-pct"></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">⭐ Destaques</div>
+        <div class="hl-wrap" id="vend-highlights"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">⚠️ Alertas</div>
+        <div class="alert-wrap" id="vend-alerts"></div>
+      </div>
+    </div>
+
+    <!-- Coluna SDR -->
+    <div class="col-sdr">
+      <div class="col-title">SDRs</div>
+
+      <div class="card">
+        <div class="card-header">Ranking — SDR</div>
+        <div class="rank-head rank-sdr" id="rank-sdr-head">
+          <div>#</div><div>SDR</div>
+          <div style="text-align:center">Leads</div>
+          <div style="text-align:center">Qualif.</div>
+          <div style="text-align:center">Conv.%</div>
+        </div>
+        <div id="rank-sdr-rows"></div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Indicadores — SDR</div>
+        <div class="ind-grid" id="sdr-ind"></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     FORM VIEW
+════════════════════════════ -->
+<div id="form-view" class="view active">
+  <div class="fwrap">
+
+    <div class="form-brand">
+      <div class="form-logo-wrap">
+        <img src="data:image/png;base64,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" alt="Top Prime">
+      </div>
+      <div class="form-brand-text">
+        <h1>Placar Comercial</h1>
+        <p>Top Prime Seguros &amp; Saúde — Atualização de Dados</p>
+      </div>
+    </div>
+    <p class="form-sub">Selecione o funil, preencha os dados e clique em "Atualizar Placar".</p>
+
+    <div class="form-funil-tabs">
+      <button class="form-tab active" data-funil="b2cor"  onclick="setFormTab('b2cor')">B2COR</button>
+      <button class="form-tab"        data-funil="3cplus" onclick="setFormTab('3cplus')">3CPlus</button>
+      <button class="form-tab"        data-funil="pme"    onclick="setFormTab('pme')">Formulário PME</button>
+    </div>
+
+    <!-- ═══ B2COR ═══ -->
+    <div class="funil-panel active" data-funil="b2cor">
+      <div class="fsec">
+        <div class="fsec-title">Configurações — B2COR</div>
+        <div class="cfg-grid">
+          <div class="fld"><label>Período</label>
+            <select id="b2cor-update"><option value="10h">🕘 10h</option><option value="15h" selected>🕒 15h</option><option value="18h">🕕 18h</option></select>
+          </div>
+          <div class="fld"><label>Meta Vendas Time</label><input type="number" id="b2cor-goal-sales" value="6" min="0"></div>
+          <div class="fld"><label>Meta Contatos</label><input type="number" id="b2cor-goal-cont" value="30" min="0"></div>
+          <div class="fld"><label>Meta Propostas</label><input type="number" id="b2cor-goal-sims" value="8" min="0"></div>
+          <div class="fld"><label>Meta Vendas Ind.</label><input type="number" id="b2cor-goal-s-ind" value="2" min="0"></div>
+          <div class="fld"><label>Alert. Leads</label><input type="number" id="b2cor-alert-leads" value="0" min="0"></div>
+          <div class="fld"><label>Alert. Abaixo</label><input type="number" id="b2cor-alert-below" value="0" min="0"></div>
+        </div>
+      </div>
+      <div class="form-cols">
+        <div class="fsec">
+          <div class="fsec-title">Vendedores — B2COR</div>
+          <table class="ctbl"><thead><tr><th>Nome</th><th>Leads</th><th>Contatos</th><th>Propostas</th><th>Vendas</th><th>Resp(min)</th><th>Ativo</th></tr></thead>
+          <tbody id="b2cor-vtbody"></tbody></table>
+        </div>
+        <div class="fsec">
+          <div class="fsec-title">SDRs — B2COR</div>
+          <table class="ctbl"><thead><tr><th>Nome</th><th>Leads</th><th>Qualif.</th><th>Em contato</th><th>Lig.</th><th>Efet.</th><th>Emails</th><th>Qualifs</th><th>Reun.</th><th>Ativo</th></tr></thead>
+          <tbody id="b2cor-stbody"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 3CPLUS ═══ -->
+    <div class="funil-panel" data-funil="3cplus">
+      <div class="fsec">
+        <div class="fsec-title">Configurações — 3CPlus</div>
+        <div class="cfg-grid">
+          <div class="fld"><label>Período</label>
+            <select id="3cplus-update"><option value="10h">🕘 10h</option><option value="15h" selected>🕒 15h</option><option value="18h">🕕 18h</option></select>
+          </div>
+          <div class="fld"><label>Meta Vendas Time</label><input type="number" id="3cplus-goal-sales" value="6" min="0"></div>
+          <div class="fld"><label>Meta Contatos</label><input type="number" id="3cplus-goal-cont" value="30" min="0"></div>
+          <div class="fld"><label>Meta Propostas</label><input type="number" id="3cplus-goal-sims" value="8" min="0"></div>
+          <div class="fld"><label>Meta Vendas Ind.</label><input type="number" id="3cplus-goal-s-ind" value="2" min="0"></div>
+          <div class="fld"><label>Alert. Leads</label><input type="number" id="3cplus-alert-leads" value="0" min="0"></div>
+          <div class="fld"><label>Alert. Abaixo</label><input type="number" id="3cplus-alert-below" value="0" min="0"></div>
+        </div>
+      </div>
+
+      <div class="fsec">
+        <div class="fsec-title">Vendedores — 3CPlus</div>
+        <table class="ctbl"><thead><tr><th>Nome</th><th>Leads</th><th>Contatos</th><th>Propostas</th><th>Vendas</th><th>Resp(min)</th><th>Ativo</th></tr></thead>
+        <tbody id="3cplus-vtbody"></tbody></table>
+      </div>
+
+      <div class="fsec">
+        <div class="fsec-title">
+          Listas de Prospecção — 3CPlus
+          <span style="float:right;display:flex;gap:8px;align-items:center">
+            <input type="text" id="nova-lista-nome" placeholder="Nome da nova lista" style="width:180px;font-size:.78rem;padding:4px 8px;text-align:left">
+            <button class="btn-add-lista" onclick="adicionarLista()">+ Adicionar Lista</button>
+          </span>
+        </div>
+        <!-- Cards de listas gerados dinamicamente pelo JS -->
+        <div id="3c-listas-container" style="display:flex;flex-direction:column;gap:14px;margin-top:4px"></div>
+      </div>
+    </div>
+
+    <!-- ═══ PME ═══ -->
+    <div class="funil-panel" data-funil="pme">
+      <div class="fsec">
+        <div class="fsec-title">Configurações — Formulário PME</div>
+        <div class="cfg-grid">
+          <div class="fld"><label>Período</label>
+            <select id="pme-update"><option value="10h">🕘 10h</option><option value="15h" selected>🕒 15h</option><option value="18h">🕕 18h</option></select>
+          </div>
+          <div class="fld"><label>Meta Vendas Time</label><input type="number" id="pme-goal-sales" value="6" min="0"></div>
+          <div class="fld"><label>Meta Contatos</label><input type="number" id="pme-goal-cont" value="30" min="0"></div>
+          <div class="fld"><label>Meta Propostas</label><input type="number" id="pme-goal-sims" value="8" min="0"></div>
+          <div class="fld"><label>Meta Vendas Ind.</label><input type="number" id="pme-goal-s-ind" value="2" min="0"></div>
+          <div class="fld"><label>Alert. Leads</label><input type="number" id="pme-alert-leads" value="0" min="0"></div>
+          <div class="fld"><label>Alert. Abaixo</label><input type="number" id="pme-alert-below" value="0" min="0"></div>
+        </div>
+      </div>
+      <div class="form-cols">
+        <div class="fsec">
+          <div class="fsec-title">Vendedores — PME</div>
+          <table class="ctbl"><thead><tr><th>Nome</th><th>Leads</th><th>Contatos</th><th>Propostas</th><th>Vendas</th><th>Resp(min)</th><th>Ativo</th></tr></thead>
+          <tbody id="pme-vtbody"></tbody></table>
+        </div>
+        <div class="fsec">
+          <div class="fsec-title">SDRs — PME (João e Daniel)</div>
+          <table class="ctbl"><thead><tr><th>Nome</th><th>Leads</th><th>Qualif.</th><th>Neg.WPP</th><th>Lig.</th><th>Efet.</th><th>Emails</th><th>Qualifs</th><th>Reun.</th><th>Ativo</th></tr></thead>
+          <tbody id="pme-stbody"></tbody></table>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn-submit" onclick="submitForm()">🚀 Atualizar Placar</button>
+    <div style="text-align:center">
+      <button class="btn-clear" onclick="clearData()">🗑️ Limpar todos os dados</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════
+     MODAL DE REUNIÕES
+════════════════════════════ -->
+<div id="modal-reunioes" class="modal-overlay" onclick="if(event.target===this)fecharReunioes()">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 id="modal-titulo">Reuniões</h3>
+      <button class="modal-close" onclick="fecharReunioes()">✕</button>
+    </div>
+
+    <!-- Lista de reuniões registradas -->
+    <div class="modal-lista" id="modal-lista-reunioes"></div>
+
+    <!-- Formulário nova reunião -->
+    <div class="modal-form">
+      <div class="modal-form-title">Registrar nova reunião</div>
+      <div class="modal-form-row">
+        <div class="fld"><label>SDR</label>
+          <select id="modal-sdr"></select>
+        </div>
+        <div class="fld"><label>Vidas</label>
+          <input type="number" id="modal-vidas" placeholder="Ex: 100" min="1">
+        </div>
+      </div>
+      <div class="fld"><label>Empresa</label>
+        <input type="text" id="modal-empresa" placeholder="Nome da empresa" style="text-align:left">
+      </div>
+      <div class="fld"><label>Observação (opcional)</label>
+        <input type="text" id="modal-obs" placeholder="Anotações..." style="text-align:left">
+      </div>
+      <button class="btn-add-reun" onclick="adicionarReuniao()">📅 Registrar Reunião</button>
+    </div>
+  </div>
+</div>
+
+<button id="btn-export" onclick="exportExcel()">📊 Exportar Excel</button>
+<button id="btn-edit"   onclick="showForm()">✏️ Editar Dados</button>
+<div id="toast"></div>
+
+<script src="placar.js"></script>
+</body>
+</html>
