@@ -19,7 +19,7 @@ const path = require('path');
 const os   = require('os');
 
 /* ─── Configurações ─── */
-const PORTA          = 2000;
+const PORTA          = 8080;
 const ARQUIVO_DADOS  = path.join(__dirname, 'propostas.json');
 const ARQUIVO_PLACAR = path.join(__dirname, 'placar.json');
 const ARQUIVO_PLACAR2 = path.join(__dirname, 'placar2.json');
